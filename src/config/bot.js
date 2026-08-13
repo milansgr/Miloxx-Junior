@@ -24,8 +24,8 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
-        type: 4,               // Custom
+        state: "SAH MILOXX QUEL GOAT",     // this is what people actually see
+        type: 3,               // Custom
       },
     ],
   },
@@ -61,9 +61,9 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "Quel est ton nom?", required: true },
+      { question: "Quel age as tu?", required: true },
+      { question: "Pourquoi tu veux join?", required: true },
     ],
 
     // Embed colors by application status.
@@ -93,8 +93,8 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699",
-      secondary: "#2F3136",
+      primary: "#B340DE",
+      secondary: "#CF36CA",
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287",
@@ -141,7 +141,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "Miloxx Junior",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -217,29 +217,29 @@ export const botConfig = {
     defaultCategory: null,
 
     // Role IDs allowed to manage/support tickets.
-    supportRoles: [],
+    supportRoles: [Founder],
 
     // Priority options users/staff can assign.
     priorities: {
       none: {
         emoji: "⚪",
         color: "#95A5A6",
-        label: "None",
+        label: "Nulle",
       },
       low: {
         emoji: "🟢",
         color: "#2ECC71",
-        label: "Low",
+        label: "Basse",
       },
       medium: {
         emoji: "🟡",
         color: "#F1C40F",
-        label: "Medium",
+        label: "Modérée",
       },
       high: {
         emoji: "🔴",
         color: "#E74C3C",
-        label: "High",
+        label: "Haute",
       },
       urgent: {
         emoji: "🚨",
@@ -249,7 +249,7 @@ export const botConfig = {
     },
 
     // Default priority for new tickets.
-    defaultPriority: "none",
+    defaultPriority: "Nulle",
 
     // Category ID where closed tickets are archived.
     archiveCategory: null,
@@ -277,10 +277,10 @@ export const botConfig = {
     maximumDuration: 2592000000,
 
     // Role IDs allowed to host giveaways.
-    allowedRoles: [],
+    allowedRoles: [Founder],
 
     // Role IDs that bypass giveaway restrictions.
-    bypassRoles: [],
+    bypassRoles: [Founder],
   },
 
   // =========================
@@ -302,10 +302,10 @@ export const botConfig = {
   // =========================
   verification: {
     // Message shown when posting the verification panel.
-    defaultMessage: "Click the button below to verify yourself and gain access to the server!",
+    defaultMessage: "Clique juste ici pour confirmer et rejoindre le serrveur :)",
 
     // Text on the verification button.
-    defaultButtonText: "Verify",
+    defaultButtonText: "Verifier",
 
     // Automatic verification behavior.
     autoVerify: {
@@ -372,11 +372,11 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      "Welcome {user} to {server}! We now have {memberCount} members!",
+      "Bienvenue {user}, sur la {server}! Heureux de voir!",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left the server. We now have {memberCount} members.",
+      "{user} nous à quittés,un soldat de moins :(",
     // Channel ID for welcome messages.
     defaultWelcomeChannel: null,
     // Channel ID for goodbye messages.
@@ -434,13 +434,13 @@ export const botConfig = {
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
-    noPermission: "You do not have permission to use this command.",
-    cooldownActive: "Please wait {time} before using this command again.",
-    errorOccurred: "An error occurred while executing this command.",
+    noPermission: "Pas assez d'aura pour maîtriser cette commande.",
+    cooldownActive: "Attends {time}s, avant de renvoyer ta commande.",
+    errorOccurred: "Une carabistouille est survenue chef.",
     missingPermissions:
-      "I am missing required permissions to perform this action.",
-    commandDisabled: "This command has been disabled.",
-    maintenanceMode: "The bot is currently in maintenance mode.",
+      "Impossible le sang vois avec Miloxx directement.",
+    commandDisabled: "Cette commande est K-POUT.",
+    maintenanceMode: "Miloxx Junior fait la sieste, reviens plus tard chef.",
   },
 
   // =========================

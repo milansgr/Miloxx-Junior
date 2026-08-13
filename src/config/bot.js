@@ -217,7 +217,7 @@ export const botConfig = {
     defaultCategory: null,
 
     // Role IDs allowed to manage/support tickets.
-    supportRoles: [Founder],
+    supportRoles: [],
 
     // Priority options users/staff can assign.
     priorities: {
@@ -277,10 +277,10 @@ export const botConfig = {
     maximumDuration: 2592000000,
 
     // Role IDs allowed to host giveaways.
-    allowedRoles: [Founder],
+    allowedRoles: [],
 
     // Role IDs that bypass giveaway restrictions.
-    bypassRoles: [Founder],
+    bypassRoles: [],
   },
 
   // =========================

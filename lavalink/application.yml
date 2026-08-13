@@ -1,6 +1,13 @@
 server:
   port: 2333
   address: 0.0.0.0
+  password: "${LAVALINK_PASSWORD:youshallnotpass}"
+  sources:
+    youtube: false
+    bandcamp: true
+    soundcloud: true
+    http: true
+    local: false
 
 lavalink:
   plugins:
@@ -25,17 +32,10 @@ plugins:
     providers:
       - "ytsearch:\"%ISRC%\""
       - "ytsearch:%QUERY%"
-  
-  server:
-    password: "${LAVALINK_PASSWORD:youshallnotpass}"
-    sources:
-      youtube: false
-      bandcamp: true
-      soundcloud: true
-      http: true
-      local: false
 
-plugins:
+    deezer:
+      arl: "${DEEZER_ARL}"
+
   youtube:
     enabled: true
     allowSearch: true

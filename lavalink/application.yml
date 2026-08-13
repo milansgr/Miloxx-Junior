@@ -8,6 +8,24 @@ lavalink:
       snapshot: false
     - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.1"
       snapshot: false
+
+plugins:
+  lavasrc:
+    sources:
+      spotify: true
+      deezer: true
+      applemusic: false
+      youtube: false
+      yandexmusic: false
+      tidal: false
+      qobuz: false
+      ytdlp: false
+      jiosaavn: false
+
+    providers:
+      - "ytsearch:\"%ISRC%\""
+      - "ytsearch:%QUERY%"
+  
   server:
     password: "${LAVALINK_PASSWORD:youshallnotpass}"
     sources:

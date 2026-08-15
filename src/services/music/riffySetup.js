@@ -45,6 +45,14 @@ export function initializeMusic(client) {
         logger.error(`Music player error in guild ${player.guildId}:`, error);
     });
 
+        client.riffy.on('nodeConnect', (node) => {
+        logger.info(`Lavalink node "${node.name}" connected.`);
+    });
+
+    client.riffy.on('nodeError', (node, error) => {
+        logger.error(`Lavalink node "${node.name}" error:`, error);
+    });
+
     logger.info(`Music initialized with ${lavalinkConfig.nodes.length} Lavalink node(s).`);
 }
 

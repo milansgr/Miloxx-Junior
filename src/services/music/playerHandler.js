@@ -224,7 +224,9 @@ export function setupPlayerHandler(client) {
     });
 
     client.riffy.on('trackError', async (player, track, payload) => {
-        logger.error(`Track error in ${player.guildId} for "${track?.info?.title}":`, payload?.error || payload);
+        logger.error(
+    `Track error in ${player.guildId} for "${track?.info?.title}": ${JSON.stringify(payload?.error || payload, null, 2)}`
+);
         const guildData = getGuildMusicData(player.guildId);
         if (guildData.playerChannelId) {
             const channel = client.channels.cache.get(guildData.playerChannelId);

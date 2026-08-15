@@ -22,9 +22,7 @@ export function initializeMusic(client) {
         },
         defaultSearchPlatform: lavalinkConfig.defaultSearchPlatform,
         restVersion: lavalinkConfig.restVersion,
-        bypassChecks: {
-            nodeFetchInfo: true,
-        },
+        bypassChecks: {},
     });
 
     setupPlayerHandler(client);

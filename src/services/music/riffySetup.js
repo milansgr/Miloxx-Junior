@@ -40,8 +40,13 @@ export function initializeMusic(client) {
     });
 
     client.riffy.on('playerError', (player, error) => {
-        logger.error(`Music player error in guild ${player.guildId}:`, error);
-    });
+    logger.error(
+        `Music player error in guild ${player.guildId}: ${JSON.stringify(
+            error,
+            Object.getOwnPropertyNames(error || {})
+        )}`
+    );
+});
 
         client.riffy.on('nodeConnect', (node) => {
         logger.info(`Lavalink node "${node.name}" connected.`);

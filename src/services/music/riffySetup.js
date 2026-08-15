@@ -25,6 +25,39 @@ export function initializeMusic(client) {
         bypassChecks: {},
     });
 
+    // RIFFY DEBUG - état des nodes
+  setInterval(() => {
+    try {
+      const nodes = client.riffy?.nodes;
+
+      if (!nodes) {
+        logger.warn('[RIFFY DEBUG] Aucun gestionnaire de nodes trouvé');
+        return;
+      }
+
+      const nodeList =
+        typeof nodes.values === 'function'
+          ? [...nodes.values()]
+          : Object.values(nodes);
+
+      if (nodeList.length === 0) {
+        logger.warn('[RIFFY DEBUG] 0 node trouvé dans Riffy');
+        return;
+      }
+
+      for (const node of nodeList) {
+        logger.warn(
+          `[RIFFY DEBUG] Node "${node.name || node.options?.name || 'unknown'}" | ` +
+          `connected=${node.connected} | ` +
+          `available=${node.available} | ` +
+          `state=${node.state}`
+        );
+      }
+    } catch (error) {
+      logger.error('[RIFFY DEBUG] Erreur lecture nodes:', error);
+    }
+  }, 5000);
+
     setupPlayerHandler(client);
 
     client.on('raw', (packet) => {

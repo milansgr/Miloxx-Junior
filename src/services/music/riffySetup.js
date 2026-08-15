@@ -55,8 +55,18 @@ export function initializeMusic(client) {
 }
 
 export function initRiffyAfterReady(client) {
+    logger.info(`Riffy init check: riffy=${!!client.riffy}, user=${client.user?.id || 'none'}`);
+
     if (client.riffy && client.user?.id) {
-        client.riffy.init(client.user.id);
-        logger.info('Riffy voice connection manager initialized.');
+        logger.info(`Calling Riffy.init() for user ${client.user.id}...`);
+
+        try {
+            client.riffy.init(client.user.id);
+            logger.info('Riffy.init() called successfully.');
+        } catch (error) {
+            logger.error('Riffy.init() threw an error:', error);
+        }
+    } else {
+        logger.error('Riffy.init() NOT called: client.riffy or client.user is missing.');
     }
 }
